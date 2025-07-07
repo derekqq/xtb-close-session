@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "XTB SessionGuard",
+    "version": "1.0",
+    "permissions": [
+        "cookies",
+        "webNavigation",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://xstation5.xtb.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://xstation5.xtb.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "icons": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    },
+    "action": {
+        "default_icon": {
+            "16": "icon.png",
+            "48": "icon.png",
+            "128": "icon.png"
+        },
+        "default_title": "XTB SessionGuard"
+    }
+}
